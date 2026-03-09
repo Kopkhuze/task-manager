@@ -53,7 +53,11 @@ public class WorkTask extends Task {
     @Override
     public void setEstimatedTime(int estimatedTime) {
         // TODO: Set the estimated time
-        this.estimatedTime = estimatedTime;
+        if (estimatedTime < 0) {
+            this.estimatedTime = 0;
+        } else {
+            this.estimatedTime = estimatedTime;
+        }
     }
 
     @Override

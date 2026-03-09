@@ -10,7 +10,7 @@ public class PersonalTask extends Task {
 
     public PersonalTask() {
         // TODO: Initialize default values
-        taskName = "Urgent Task";
+        taskName = "Personal Task";
         dueDate = "2025-01-01";
         estimatedTime = 30;
     }
@@ -55,7 +55,11 @@ public class PersonalTask extends Task {
     @Override
     public void setEstimatedTime(int estimatedTime) {
         // TODO: Set the estimated time
-        this.estimatedTime = estimatedTime;
+        if (estimatedTime < 0) {
+            this.estimatedTime = 0;
+        } else {
+            this.estimatedTime = estimatedTime;
+        }
     }
 
     @Override
